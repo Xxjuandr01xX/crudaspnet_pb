@@ -1,0 +1,36 @@
+﻿@model ContactosModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row clearfix d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header bg-secondary text-white text-center">
+                    Agregar Nuevo Contacto
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row clearfix d-flex justify-content-end">
+                            <div class="col-md-10">
+                               <form asp-action="Eliminar" asp-controller="Contactos" method="post">
+                                   <div class="alert alert-danger w-100 p-5" role="alertdialog">
+                                       
+                                     
+                                        <input asp-for="Id" type="hidden"></input>
+                                        <p>Esta seguro que desea eliminar a <strong>@Html.DisplayTextFor(a=>a.Nombre) @Html.DisplayTextFor(a=>a.Apellido)</strong> de la lista</p>
+                                      
+                                   </div>
+                                   <input type="submit" class="btn btn-danger rounded-0" value="Eliminar"></input>
+                               </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

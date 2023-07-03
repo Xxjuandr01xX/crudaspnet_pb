@@ -1,0 +1,59 @@
+﻿@model List<ContactosModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listar</h1>
+
+<div class="container-fluid">
+    <div class="row clearfix d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header bg-secondary text-white text-center">
+                    Agregar Nuevo Contacto
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row clearfix d-flex justify-content-end">
+                            <div class="col-md-2">
+                                <a asp-controller="Contactos" asp-action="FormGuardar" class="btn btn-primary w-100 rounded-0 shadow">Nuevo</a>
+                            </div>
+                        </div>
+
+                        <!--Inicio de la tabla de contactos-->
+                        <div class="row clearfix d-flex justify-content-center">
+                            <div class="col-md-12 table-responsive">
+                                <table class="table table-bordered table-stripped table-hover w-100">
+                                    <thead>
+                                        <tr>
+                                            <td>Nombre</td>
+                                            <td>Apellido</td>
+                                            <td>Correo</td>
+                                            <td>Opciones</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach(var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Nombre</td>
+                                                <td>@item.Apellido</td>
+                                                <td>@item.Correo</td>
+                                                <td>
+                                                    <p>
+                                                        <a  asp-route-id="@item.Id" asp-action="Eliminar" asp-controller="Contactos">Eliminar</a> | <a asp-route-id="@item.Id" asp-action="Editar" asp-controller="Contactos">Editar</a>
+                                                    </p>
+                                                </td>
+                                            </tr>    
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

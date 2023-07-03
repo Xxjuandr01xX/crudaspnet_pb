@@ -1,0 +1,91 @@
+﻿@model ContactosModel
+
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<div class="container-fluid">
+    <div class="row clearfix d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header bg-secondary text-white text-center">
+                    Agregar Nuevo Contacto
+                </div>
+                <form asp-controller="Contactos" asp-action="Editar" method="post">
+                    <input asp-for="Id" type="hidden"></input>
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <div class="row clearfix d-flex justify-content-center">
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <label class="input-group-text">C.I: </label>
+                                        <input asp-for="Cedula" type="text" class="form-control" placeholder="Cedula"></input>
+                                        <span asp-validation-for="Cedula" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix d-flex justify-content-center mt-3">
+                                    <div class="col-md-5">
+                                        <div class="input-group">
+                                            <label class="input-group-text">Nombre: </label>
+                                            <input asp-for="Nombre" type="text" class="form-control" placeholder="Juan Diego"></input>
+                                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="input-group">
+                                            <label class="input-group-text">Apellido: </label>
+                                            <input asp-for="Apellido" type="text" class="form-control" placeholder="Rincon Urdaneta"></input>
+                                            <span asp-validation-for="Apellido" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix d-flex justify-content-center mt-3">
+                                    <div class="col-md-5">
+                                        <div class="input-group">
+                                            <label class="input-group-text">Telefono: </label>
+                                            <input asp-for="Telefono" type="text" class="form-control" placeholder="0414-6801859" />
+                                            <span asp-validation-for="Telefono" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="input-group">
+                                            <label class="input-group-text">Correo: </label>
+                                            <input asp-for="Correo" type="text" class="form-control" placeholder="jd.rincon021gmail.com" />
+                                            <span asp-validation-for="Correo" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix d-flex justify-content-center mt-3">
+                                    <div class="col-md-10">
+                                        <div class="input-group">
+                                            <label class="input-group-text">Nombre: </label>
+                                            <textarea asp-for="Direccion" class="form-control">
+
+                                    </textarea>
+                                            <span asp-validation-for="Direccion" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix d-flex justify-content-center mt-4">
+                                    <div class="col-md-10 ">
+                                        <div class="input-group">
+                                            <input type="submit" value="Registrar Contacto" class="btn btn-primary rounded-0 w-100"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--FIN DEL FORMULARIO-->
+                </form>
+                <!--FIN DEL FORMULARIO-->
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
